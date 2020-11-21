@@ -1,0 +1,14 @@
+.title-center-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.title-button {
+    margin-top: 2em;
+}
+
+.title-logo {
+    margin-top: 3em;
+}

@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: true,
+  title: 'Taskly App',
+  routes: {
+    tasklist: '/tasklist',
+    home: '/'
+  }
 };
