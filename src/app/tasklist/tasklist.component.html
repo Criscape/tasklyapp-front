@@ -1,1 +1,27 @@
 <app-toolbar-main [title]="title"></app-toolbar-main>
+<div class="tasklist-content">
+    <div class="tasklist-first-input mat-elevation-z4">
+        <mat-form-field class="tasklist-form-field">
+            <mat-label>New task</mat-label>
+            <input matInput type="text" [(ngModel)]="value">
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <div class="tasklist-button-container">
+            <button mat-mini-fab color="primary" aria-label="Add task icon" (click)="createTask()">
+              <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="tasklist-list mat-elevation-z4">
+        <mat-checkbox *ngFor="let task of tasks; let i = index" (change)="changeState($event)">
+            <p class="tasklist-taskdesc">
+                {{ task.description }}
+            </p>
+            <button mat-mini-fab color="warn" aria-label="Delete task icon" (click)="deleteTask(task)">
+                <mat-icon>remove</mat-icon>
+            </button>
+        </mat-checkbox>
+    </div>
+</div>
