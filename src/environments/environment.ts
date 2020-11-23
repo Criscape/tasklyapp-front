@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backUrl: 'http://localhost:3000',
+  backRoutes: {
+    listTask: '/tasks/list',
+    createTask: '/tasks/create',
+    deleteTask: '/tasks/delete',
+    updateTask: '/tasks/update',
+    listState: '/states/list'
+  },
+  title: 'Taskly App',
+  routes: {
+    tasklist: '/tasklist',
+    home: '/'
+  }
 };
 
 /*

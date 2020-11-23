@@ -1,8 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
-import { ITask } from '../models';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +35,20 @@ export class TasklistService {
   loadStates(): Observable<any> {
     const url = environment.backUrl + environment.backRoutes.listState;
     return this.http.get(url);
+  }
+
+  updateTask(
+    _id: String,
+    stateId: String,
+    description: String
+    ): Observable<any> {
+    const url = environment.backUrl + environment.backRoutes.updateTask;
+    let body = {
+      _id: _id,
+      userId: '5fb94c5500653c4d5bde3f5b',
+      stateId: stateId,
+      description: description
+    };
+    return this.http.put(url, body);
   }
 }

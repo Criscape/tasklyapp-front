@@ -17,3 +17,15 @@ export interface IState extends Base {
     name: String;
     description: String;
 }
+
+export enum State {
+    Well = '5fb95271c020d53c9be845ed',
+    Worrying = '5fb95271c020d53c9be845ee',
+    Expired = '5fb95271c020d53c9be845ef',
+    Done = '5fb95271c020d53c9be845f0',
+    Deleted = '5fb95271c020d53c9be845f1'
+}
+
+export interface DialogData {
+    description: String;
+}
